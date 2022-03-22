@@ -9,7 +9,7 @@
 <body>
 	<h2>로그인</h2>
 	<form name="login" action="LoginPro.jsp" method="post">
-		아이다 : <input type="text" name="id" /> <br />
+		아이다 : <input type="text" name="id" /> <br>
 		암호 : <input type="password" name="pw" /> <br /> <br>
 		<input type="submit" value="로그인" />
 	</form>
