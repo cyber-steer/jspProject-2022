@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    function check(){
+        let id = document.getElementById("id").value;
+        let pw = document.getElementById("pw").value;
+        let pwd = document.getElementById("pwd").value;
+        let nickName = document.getElementById("nickName").value;
+
+        if(id == ""){
+            alert("아이디는 필수 입니다");
+            return false;
+        }
+        if(pw == "" || pwd == ""){
+            alert("비밀번호는 필수 입니다");
+            return false;
+        }
+        else if(pw != pwd){
+            alert("비밀번호가 다릅니다");
+            return false
+        }
+        if(nickName == ""){
+            alert("닉네임은 필수 입니다");
+            return false;
+        }
+    }
+</script>
+</head>
+<body>
+    <form action="singUpPro.jsp" method="post" onsubmit="return check()">
+        <label for="id">아이디 : </label>
+        <input type="text" id="id" name="id"> <br>
+
+        <label for="pw">비밀번호 : </label>
+        <input type="password" id="pw" name="pw"> <br>
+        <label for="pwd">비밀번호 확인 : </label>
+        <input type="password" id="pwd" name="pwd"> <br>
+
+        <label for="nickName">별명 : </label>
+        <input type="text" id="nickName" name="nickName"> <br>
+        <hr width="300px" align="left">
+        <label for="gender">성별 : </label>
+        <input type="radio" value="남" name="gender" checked>남
+        <input type="radio" value="여" name="gender">여 <br>
+
+        <label for="language">언어 : </label>
+        <input type="checkbox" value="C" name="language"> C
+        <input type="checkbox" value="JAVA" name="language"> JAVA
+        <input type="checkbox" value="Python" name="language"> Python
+        <input type="checkbox" value="Ruby" name="language"> Ruby
+        <input type="checkbox" value="Perl" name="language"> Perl <br>
+
+        <label for="locate">지역 : </label>
+        <select name="locate" id="locate">
+            <option value="서울">서울</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+            <option value="충청도">충청도</option>
+            <option value="경상도">경상도</option>
+            <option value="전라도">전라도</option>
+        </select><br>
+
+        <label for="memo">소개 : </label> <br>
+        <textarea name="memo" id="memo" cols="30" rows="10"></textarea> <br>
+        <input type="submit" value="회원가입" id="submit">
+    </form>
+</body>
+</html>
