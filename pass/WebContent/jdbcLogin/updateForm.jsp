@@ -72,10 +72,10 @@
 	    <br>
 	    <div class="text-center">
 	    	<input type="submit" value="수정">
+				<a href="delete.jsp?id=<%=id%>"><button type="button">삭제</button></a>
+				<button type="button" onclick="location.href='list.jsp'">돌아가기</button>
 			</div>
 		</form>
-				<button type="button" onclick="location.href='delete.jsp'">삭제</button>
-				<button type="button" onclick="location.href='list.jsp'">돌아가기</button>
 	
 	</div>
 </body>

@@ -1,4 +1,5 @@
 
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -6,18 +7,18 @@
     pageEncoding="UTF-8"%>
 <%
 	String id = request.getParameter("id");
-	System.out.println(id);
+	String sql = "DELETE FROM login WHERE id=?;";
 	Class.forName("org.mariadb.jdbc.Driver");
 	
 	String url = "jdbc:mariadb://localhost:3333/jspdb";
 	String user = "jsp";
 	String pwd= "1111";
 	Connection con = DriverManager.getConnection(url, user, pwd);
+	PreparedStatement pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, id);
+	pstmt.executeUpdate();
 	
-	Statement stmt = con.createStatement();
-	//stmt.executeUpdate(query);
-	
-	stmt.close();
+	pstmt.close();
 	con.close();
 	
 	response.sendRedirect("list.jsp");
