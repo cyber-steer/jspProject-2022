@@ -8,6 +8,6 @@
 </head>
 <body>
 	<button type="button" onclick="location.href='list.jsp'">목록 조회</button>
-	<button type="button" onclick="location.href='insertForm.jsp'">사용자 입력</button>
+	<button type="button" onclick="location.href='insertUpdateForm.jsp'">사용자 입력</button>
 </body>
 </html>

@@ -20,3 +20,6 @@ INSERT INTO login(name,id,pwd) VALUES('Name','test', '1111');
 
 ALTER TABLE login
 	ADD(name VARCHAR(20));
+	
+delete from login where id='ㅁㅁㅁ';
+DELETE FROM login WHERE id

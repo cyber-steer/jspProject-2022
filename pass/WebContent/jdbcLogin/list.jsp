@@ -32,8 +32,8 @@
 <body>
 <table class="table">
 	<tr>
-		<td>name</td>
 		<td>id</td>
+		<td>name</td>
 		<td>pwd</td>
 	</tr>
 	<tr>
@@ -44,12 +44,13 @@
 		String id = rs.getString("id");
 		String pw = rs.getString("pwd");
 %>
-		<td><a href="updateForm.jsp?id=<%=id%>"><%= id %></a></td>
+		<td><a href="insertUpdateForm.jsp?id=<%=id%>"><%= id %></a></td>
 		<td><%= name %></td>
 		<td><%= pw %></td>
 	</tr>
 <% } %>
 </table>
+<button type="button" onclick="location.href='index.jsp'" >돌아가기</button>
 
 <%
 	
