@@ -1,3 +1,6 @@
+DROP table member;
+DROP table board;
+
 CREATE TABLE member(
 	id VARCHAR(30),
 	pw VARCHAR(30),
@@ -7,7 +10,7 @@ CREATE TABLE board(
 	title VARCHAR(30),
 	name VARCHAR(20),
 	content VARCHAR(200),
-	idx VARCHAR(1000)
+	idx VARCHAR(200)
 );
 DROP TABLE board;
 INSERT INTO member(id, NAME, pw) VALUES('test', '1111', '관리자');
@@ -27,3 +30,5 @@ update board set title=?, content=? where NAME=?;
 update board set title='임시제목', content='rfa3' where idx='369';
 
 delete from board where idx='11';
+select * from member where NAME="관리자";
+select * from board where idx='0000';

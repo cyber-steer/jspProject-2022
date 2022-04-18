@@ -51,6 +51,15 @@
 		<%
 	}
 	else if(idCheck != 0){
+		rs.close();
+		pstmt.close();
+		con.close();
+		%>
+			<script>
+				alert("아이디가 없습니다");
+				history.back();
+			</script>
+		<%
 	}
 	else if(pwCheck != 0){
 
