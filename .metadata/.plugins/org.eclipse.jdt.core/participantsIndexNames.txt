@@ -23,3 +23,5 @@ C:\Users\admin\Polder\DIT\JSP\code\.metadata\.plugins\org.eclipse.jst.jsp.core\j
 \pass\src
 C:\Users\admin\Polder\DIT\JSP\code\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\94191758.index
 \pass\src
+C:\Users\admin\Polder\DIT\JSP\code\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1038760228.index
+\pass\src
