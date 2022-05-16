@@ -2,7 +2,7 @@ USE jspdb;
 
 CREATE TABLE login(
 	id VARCHAR(10),
-	pwd VARCHAR(20)
+	pwd VARCHAR(20customer)
 );
 
 COMMIT;

@@ -1,3 +1,5 @@
+<%@page import="com.dit.LoginDto"%>
+<%@page import="com.dit.LoginDao"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -7,36 +9,8 @@
     pageEncoding="UTF-8"%>
 <%
 	String id =	request.getParameter("id");
-	request.setAttribute("id", id);
-
-	//1. JDBC driver를 로드한다.
-	Class.forName("org.mariadb.jdbc.Driver");
-	
-	// 2. DB와의 연결(Connection)을 생성한다.
-	String url = "jdbc:mariadb://localhost:3333/jspdb";
-	String user = "jsp";
-	String pwd= "1111";
-	Connection con = DriverManager.getConnection(url, user, pwd);
-	
-	// 3. 연결후 그 통로를 통해 SQL문을 실행한다.
-	String sql = "select * from login where id=?";
-	PreparedStatement pstmt=con.prepareStatement(sql);
-	pstmt.setString(1,id);
-	
-	//4 SQL 실행
-	ResultSet rs = pstmt.executeQuery();
-	String name="";
-	String pw="";
-	while(rs.next()){
-		name = rs.getString("name");
-		pw = rs.getString("pwd");
-	}
-
-	//5. 객체 해제
-	rs.close();
-	pstmt.close();
-	con.close();
-	
+  LoginDao dao = new LoginDao();
+  LoginDto dto = dao.select(id);
 %>
 <!DOCTYPE html>
 <html>
@@ -62,11 +36,11 @@
 	    </div>
 	    <div class="form-group">
 	      <label for="name">NAME:</label>
-	      <input type="text" class="form-control" id="name" name="name" value="<%= name %>">
+	      <input type="text" class="form-control" id="name" name="name" value="<%= dto.getName() %>">
 	    </div>
 	    <div class="form-group">
 	      <label for="pwd">PASSWORD:</label>
-	      <input type="password" class="form-control" id="pwd" name="pwd"value="<%= pw %>">
+	      <input type="password" class="form-control" id="pwd" name="pwd"value="<%= dto.getPwd() %>">
 
 	    </div>
 	    <br>
