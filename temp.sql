@@ -16,6 +16,8 @@ SELECT * FROM customer;
 DESC customer;
 SELECT * FROM member;
 DELETE FROM customer WHERE NAME="jsp";
+SELECT * from login;
+select pwd from login where id='DTO';
 
 CREATE DATABASE androiddb;
 GRANT ALL PRIVILEGES ON androiddb.* TO android@localhost IDENTIFIED BY '1111' WITH GRANT OPTION;

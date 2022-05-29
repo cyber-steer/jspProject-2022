@@ -10,11 +10,13 @@
 <%@page import="java.sql.DriverManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <%
 	ArrayList<LoginDto> dtos = new ArrayList<LoginDto>();
 	LoginDao dao = new LoginDao();
 	dtos = dao.select();
+	pageContext.setAttribute("dtos", dtos);
 	
 %>
 <!DOCTYPE html>
@@ -32,19 +34,12 @@
 		<td>pwd</td>
 	</tr>
 	<tr>
-<%
-	// 5. 반환된 데이터 출력
-	for(int i=0; i<dtos.size();i++){
-		LoginDto dto = dtos.get(i);
-		String name = dto.getName();
-		String id = dto.getId();
-		String pw = dto.getPwd();
-%>
-		<td><a href="updateForm.jsp?id=<%=id%>"><%= id %></a></td>
-		<td><%= name %></td>
-		<td><%= pw %></td>
+	<c:forEach var="dto" items="${dtos}">
+		<td><a href="updateForm.jsp?id=${dto.id}">${dto.id }</a></td>
+		<td>${dto.name}</td>
+		<td>${dto.pwd }</td>
 	</tr>
-<% } %>
+	</c:forEach>
 </table>
 <button type="button" onclick="location.href='index.jsp'" >돌아가기</button>
 
