@@ -46,11 +46,11 @@ public class LControler extends HttpServlet {
 		case "insertForm":
 			viewPage="/WEB-INF/view/insertForm.jsp";
 			break;
-//		case "insert":
-//			LoginService serviceInsert = new LoginInsertService();
-//			serviceInsert.execute(request, response);
-//			viewPage="/WEB-INF/view/index.html";
-//			break;
+		case "insert":
+			LoginService serviceInsert = new LoginInsertService();
+			serviceInsert.execute(request, response);
+			viewPage="/WEB-INF/view/index.html";
+			break;
 		}
 
 		System.out.println("change view : "+viewPage);
